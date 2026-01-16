@@ -6,52 +6,23 @@ import {
   Box,
   FileCode,
   GitBranch,
-  Layers,
-  Zap,
 } from 'lucide-react'
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: 'Frontend',
-      icon: Code2,
-      skills: [
-        { name: 'JavaScript', level: 90, color: 'bg-yellow-500' },
-        { name: 'TypeScript', level: 85, color: 'bg-blue-500' },
-        { name: 'React', level: 88, color: 'bg-cyan-500' },
-        { name: 'HTML/CSS', level: 92, color: 'bg-orange-500' },
-      ],
-    },
-    {
-      title: 'Backend',
-      icon: Server,
-      skills: [
-        { name: 'Node.js', level: 85, color: 'bg-green-500' },
-        { name: 'C#', level: 90, color: 'bg-purple-500' },
-        { name: 'Python', level: 80, color: 'bg-blue-500' },
-        { name: 'Java', level: 75, color: 'bg-orange-500' },
-      ],
-    },
-    {
-      title: 'Database',
-      icon: Database,
-      skills: [
-        { name: 'PostgreSQL', level: 85, color: 'bg-blue-500' },
-        { name: 'MySQL', level: 82, color: 'bg-orange-500' },
-        { name: 'SQLite', level: 88, color: 'bg-gray-500' },
-        { name: 'MongoDB', level: 75, color: 'bg-green-500' },
-      ],
-    },
-    {
-      title: 'Tools & Others',
-      icon: Box,
-      skills: [
-        { name: 'Git', level: 90, color: 'bg-orange-500' },
-        { name: 'Docker', level: 78, color: 'bg-blue-500' },
-        { name: 'Spring Boot', level: 80, color: 'bg-green-500' },
-        { name: 'REST APIs', level: 92, color: 'bg-purple-500' },
-      ],
-    },
+  const skills = [
+    { name: 'JavaScript', icon: Code2, color: 'bg-yellow-100 text-yellow-700' },
+    { name: 'TypeScript', icon: Code2, color: 'bg-blue-100 text-blue-700' },
+    { name: 'React', icon: Code2, color: 'bg-cyan-100 text-cyan-700' },
+    { name: 'Node.js', icon: Server, color: 'bg-green-100 text-green-700' },
+    { name: 'C#', icon: Code2, color: 'bg-purple-100 text-purple-700' },
+    { name: 'Python', icon: Code2, color: 'bg-blue-100 text-blue-700' },
+    { name: 'Java', icon: Code2, color: 'bg-orange-100 text-orange-700' },
+    { name: 'Spring Boot', icon: Box, color: 'bg-green-100 text-green-700' },
+    { name: 'PostgreSQL', icon: Database, color: 'bg-blue-100 text-blue-700' },
+    { name: 'MySQL', icon: Database, color: 'bg-orange-100 text-orange-700' },
+    { name: 'SQLite', icon: Database, color: 'bg-gray-100 text-gray-700' },
+    { name: 'Docker', icon: Box, color: 'bg-blue-100 text-blue-700' },
+    { name: 'Git', icon: GitBranch, color: 'bg-gray-100 text-gray-700' },
   ]
 
   const containerVariants = {
@@ -59,125 +30,61 @@ const Skills = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.1,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,
-      y: 0,
+      scale: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.4,
       },
     },
   }
 
   return (
-    <section id="habilidades" className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-      {/* Background decorativo */}
-      <div className="absolute inset-0 overflow-hidden opacity-30">
-        <div className="absolute top-10 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-20 w-64 h-64 bg-indigo-400/10 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="habilidades" className="py-20 bg-gradient-to-b from-blue-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Minhas <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-600">Habilidades</span>
+            Minhas <span className="text-primary">Habilidades</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-indigo-600 mx-auto rounded"></div>
-          <p className="text-gray-600 mt-4 text-lg">
-            Tecnologias e ferramentas que domino
-          </p>
+          <div className="w-24 h-1 bg-primary mx-auto rounded"></div>
         </motion.div>
-
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
         >
-          {skillCategories.map((category, categoryIndex) => {
-            const IconComponent = category.icon
-            return (
-              <motion.div
-                key={categoryIndex}
-                variants={itemVariants}
-                className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300"
-              >
-                {/* Cabeçalho da categoria */}
-                <div className="flex items-center gap-3 mb-6 pb-4 border-b border-gray-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-indigo-600 rounded-xl flex items-center justify-center">
-                    <IconComponent size={24} className="text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">
-                    {category.title}
-                  </h3>
-                </div>
-
-                {/* Skills com barras de progresso */}
-                <div className="space-y-5">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex}>
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="font-semibold text-gray-700">
-                          {skill.name}
-                        </span>
-                        <span className="text-sm font-bold text-primary">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1, delay: 0.2 * skillIndex }}
-                          className={`h-full ${skill.color} rounded-full`}
-                        ></motion.div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            )
-          })}
-        </motion.div>
-
-        {/* Estatísticas adicionais */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6"
-        >
-          {[
-            { icon: Code2, label: 'Linguagens', value: '8+' },
-            { icon: Layers, label: 'Frameworks', value: '10+' },
-            { icon: Database, label: 'Databases', value: '5+' },
-            { icon: Zap, label: 'Experiência', value: '3+ anos' },
-          ].map((stat, index) => {
-            const IconComponent = stat.icon
+          {skills.map((skill, index) => {
+            const IconComponent = skill.icon
             return (
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-gradient-to-br from-primary to-indigo-600 rounded-2xl p-6 text-white text-center shadow-lg"
+                variants={itemVariants}
+                whileHover={{ scale: 1.1, y: -5 }}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center justify-center text-center"
               >
-                <IconComponent size={32} className="mx-auto mb-3" />
-                <p className="text-3xl font-bold mb-1">{stat.value}</p>
-                <p className="text-sm opacity-90">{stat.label}</p>
+                <div
+                  className={`w-16 h-16 rounded-full ${skill.color} flex items-center justify-center mb-4`}
+                >
+                  <IconComponent size={32} />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {skill.name}
+                </h3>
               </motion.div>
             )
           })}
