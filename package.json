@@ -1,7 +1,10 @@
 {
   "name": "portifolio-kaique",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
+  "description": "Portfólio profissional de Kaique Demetrio - Desenvolvedor Full Stack",
+  "author": "Kaique Demetrio <kaiquedemetrio@email.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

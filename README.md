@@ -1,6 +1,19 @@
-# Portfólio Kaique Demetrio
+# 💼 Portfólio Kaique Demetrio
 
-Portfólio pessoal moderno desenvolvido com Next.js, React, Tailwind CSS e Framer Motion. Landing page profissional para apresentar projetos, habilidades e informações de contato.
+Portfólio pessoal moderno e profissional desenvolvido com Next.js, React, Tailwind CSS e Framer Motion. Landing page elegante para apresentar projetos, habilidades e informações de contato.
+
+## ✨ Características
+
+- 🎨 Design moderno e profissional com gradientes e animações suaves
+- 📱 Totalmente responsivo para todos os dispositivos
+- ⚡ Animações fluidas com Framer Motion
+- 🎯 Navegação intuitiva com indicador de seção ativa
+- 🌈 Esquema de cores profissional com azul primário e índigo
+- 📊 Barras de progresso de habilidades
+- 🔗 Links para redes sociais e GitHub
+- 💫 Efeitos visuais modernos (glassmorphism, gradientes, sombras)
+- 📧 Seção de contato com informações detalhadas
+- ⚖️ Footer completo com direitos autorais
 
 ## 🚀 Tecnologias
 
