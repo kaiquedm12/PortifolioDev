@@ -11,9 +11,9 @@ const Hero = () => {
   }
 
   const badges = [
-    { icon: Code2, text: 'Full Stack Developer', color: 'bg-blue-100 text-blue-700' },
-    { icon: Sparkles, text: 'Criativo & Inovador', color: 'bg-purple-100 text-purple-700' },
-    { icon: Rocket, text: 'Sempre Aprendendo', color: 'bg-green-100 text-green-700' },
+    { icon: Code2, text: 'Back-end Developer', color: 'bg-blue-900/30 text-blue-300 border border-blue-700/50' },
+    { icon: Sparkles, text: 'Criativo & Inovador', color: 'bg-purple-900/30 text-purple-300 border border-purple-700/50' },
+    { icon: Rocket, text: 'Sempre Aprendendo', color: 'bg-green-900/30 text-green-300 border border-green-700/50' },
   ]
 
   return (
@@ -64,7 +64,7 @@ const Hero = () => {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl md:text-2xl text-gray-300 leading-relaxed"
             >
-              Desenvolvedor Back-end apaixonado por transformar ideias em soluções tecnológicas inovadoras.
+              Desenvolvedor Back-end.
             </motion.p>
 
             {/* Badges */}

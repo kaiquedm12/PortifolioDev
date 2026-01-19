@@ -31,7 +31,7 @@ const Projects = () => {
       title: 'Moedinha',
       description:
         'Aplicação de gestão financeira pessoal que ajuda a controlar receitas, despesas e planejamento financeiro. Interface moderna e funcionalidades completas.',
-      tech: ['Full Stack', 'React', 'Node.js'],
+      tech: ['Back-end', 'React', 'Node.js'],
       link: 'https://github.com/kaiquedm12/Moedinha',
       featured: false,
     },
