@@ -23,7 +23,7 @@ const Projects = () => {
       title: 'Sistema ERP de Padaria',
       description:
         'Sistema completo de gestão empresarial para padarias, desenvolvido para controlar estoque, vendas, fornecedores e relatórios financeiros.',
-      tech: ['C#', 'SQLite', 'ERP'],
+      tech: ['JavaScript', 'SQLite', 'ERP'],
       link: 'https://github.com/kaiquedm12/PadBakery',
       featured: true,
     },
@@ -59,7 +59,7 @@ const Projects = () => {
   }
 
   return (
-    <section id="projetos" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section id="projetos" className="py-20 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
       {/* Background decorativo */}
       <div className="absolute inset-0 overflow-hidden opacity-20">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
@@ -74,12 +74,12 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Meus <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-600">Projetos</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-indigo-600 mx-auto rounded"></div>
-          <p className="text-gray-600 mt-4 text-lg">
-            Alguns dos projetos que desenvolvi com dedicação e paixão
+          <p className="text-gray-300 mt-4 text-lg">
+            Alguns dos projetos que desenvolvi com dedicação
           </p>
         </motion.div>
         
@@ -95,7 +95,7 @@ const Projects = () => {
               key={index}
               variants={itemVariants}
               whileHover={{ y: -10 }}
-              className="group bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
+              className="group bg-slate-700 rounded-2xl p-8 shadow-lg border border-slate-600 hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
             >
               {/* Badge de destaque */}
               {project.featured && (
@@ -110,11 +110,11 @@ const Projects = () => {
               {/* Gradiente decorativo */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-indigo-600"></div>
 
-              <h3 className="text-2xl font-bold text-gray-900 mb-3 pr-20">
+              <h3 className="text-2xl font-bold text-white mb-3 pr-20">
                 {project.title}
               </h3>
               
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-300 mb-6 leading-relaxed">
                 {project.description}
               </p>
 
@@ -123,7 +123,7 @@ const Projects = () => {
                 {project.tech.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="text-xs font-semibold text-primary bg-blue-50 px-3 py-1.5 rounded-full border border-blue-100"
+                    className="text-xs font-semibold text-primary bg-slate-600 px-3 py-1.5 rounded-full border border-slate-500"
                   >
                     {tech}
                   </span>

@@ -23,7 +23,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-12">
+    <footer className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Logo e Descrição */}
@@ -38,8 +38,7 @@ const Footer = () => {
               Kaique Demetrio
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Desenvolvedor Full Stack apaixonado por criar soluções tecnológicas
-              inovadoras e eficientes.
+              Desenvolvedor Back-end.
             </p>
           </motion.div>
 
@@ -100,7 +99,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center gap-2 text-gray-400 text-sm mt-4">
               <Mail size={16} />
-              <span>kaiquedemetrio@email.com</span>
+              <span>kaiquedemetrio2017123@gmail.com</span>
             </div>
           </motion.div>
         </div>
@@ -124,7 +123,7 @@ const Footer = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-gray-400 text-sm flex items-center gap-1"
             >
-              Feito com <Heart size={14} className="text-red-500 fill-red-500" /> e muito código
+            
             </motion.p>
           </div>
         </div>

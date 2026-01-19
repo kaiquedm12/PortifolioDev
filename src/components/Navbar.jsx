@@ -37,11 +37,11 @@ const Navbar = () => {
   }
 
   const navItems = [
-    { name: 'Início', id: 'inicio', icon: '🏠' },
-    { name: 'Sobre', id: 'sobre', icon: '👤' },
-    { name: 'Projetos', id: 'projetos', icon: '💼' },
-    { name: 'Habilidades', id: 'habilidades', icon: '⚡' },
-    { name: 'Contato', id: 'contato', icon: '📧' },
+    { name: 'Início', id: 'inicio' },
+    { name: 'Sobre', id: 'sobre' },
+    { name: 'Projetos', id: 'projetos' },
+    { name: 'Habilidades', id: 'habilidades' },
+    { name: 'Contato', id: 'contato' },
   ]
 
   return (
@@ -51,8 +51,8 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white shadow-xl'
-          : 'bg-white/95 backdrop-blur-md shadow-md'
+          ? 'bg-slate-900 shadow-xl'
+          : 'bg-slate-900/95 backdrop-blur-md shadow-md'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,13 +85,10 @@ const Navbar = () => {
                 className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
                   activeSection === item.id
                     ? 'text-primary'
-                    : 'text-gray-700 hover:text-primary'
+                    : 'text-gray-300 hover:text-primary'
                 }`}
               >
-                <span className="flex items-center gap-2">
-                  <span className="text-lg">{item.icon}</span>
-                  {item.name}
-                </span>
+                {item.name}
                 {activeSection === item.id && (
                   <motion.div
                     layoutId="activeSection"
@@ -124,7 +121,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
+            className="md:hidden bg-slate-800 border-t border-slate-700 overflow-hidden"
           >
             <div className="px-4 py-4 space-y-2">
               {navItems.map((item, index) => (
@@ -137,10 +134,9 @@ const Navbar = () => {
                   className={`w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-3 ${
                     activeSection === item.id
                       ? 'bg-gradient-to-r from-primary to-indigo-600 text-white shadow-lg'
-                      : 'text-gray-700 hover:bg-gray-50'
+                      : 'text-gray-300 hover:bg-slate-700'
                   }`}
                 >
-                  <span className="text-xl">{item.icon}</span>
                   {item.name}
                 </motion.button>
               ))}

@@ -18,8 +18,8 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
-  color: #1f2937;
+  background-color: #1a2332;
+  color: #e5e7eb;
 }
 
 /* Scrollbar personalizada */
@@ -28,7 +28,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #2d3748;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -89,7 +89,7 @@ body {
   }
 
   .glass-effect {
-    @apply bg-white/80 backdrop-blur-md border border-white/20;
+    @apply bg-slate-800/80 backdrop-blur-md border border-slate-700/20;
   }
 
   .shadow-custom {

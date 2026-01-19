@@ -19,7 +19,7 @@ const Hero = () => {
   return (
     <section
       id="inicio"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-blue-50 to-indigo-50 pt-16 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-16 relative overflow-hidden"
     >
       {/* Background decorativo */}
       <div className="absolute inset-0 overflow-hidden">
@@ -42,7 +42,7 @@ const Hero = () => {
               className="inline-block"
             >
               <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">
-                👋 Bem-vindo ao meu portfólio
+                Bem-vindo ao meu portfólio
               </span>
             </motion.div>
 
@@ -50,7 +50,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
             >
               Olá, eu sou{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-600">
@@ -62,9 +62,9 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-xl md:text-2xl text-gray-600 leading-relaxed"
+              className="text-xl md:text-2xl text-gray-300 leading-relaxed"
             >
-              Desenvolvedor Full Stack apaixonado por transformar ideias em soluções tecnológicas inovadoras.
+              Desenvolvedor Back-end apaixonado por transformar ideias em soluções tecnológicas inovadoras.
             </motion.p>
 
             {/* Badges */}
@@ -102,7 +102,7 @@ const Hero = () => {
               </button>
               <button
                 onClick={() => scrollToSection('contato')}
-                className="px-8 py-3 bg-white text-primary border-2 border-primary rounded-2xl font-semibold hover:bg-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="px-8 py-3 bg-slate-800 text-primary border-2 border-primary rounded-2xl font-semibold hover:bg-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Entrar em Contato
               </button>
@@ -117,7 +117,7 @@ const Hero = () => {
           >
             <div className="relative w-80 h-80 md:w-96 md:h-96">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-indigo-500/20 rounded-full blur-3xl animate-pulse"></div>
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gradient-to-br from-gray-200 to-gray-300">
+                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-slate-700 shadow-2xl bg-gradient-to-br from-gray-600 to-gray-800">
                 <Image
                   src="/kaiquehoje.jpeg"
                   alt="Kaique Demetrio"

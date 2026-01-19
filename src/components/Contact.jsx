@@ -51,7 +51,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="contato" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section id="contato" className="py-20 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
       {/* Background decorativo */}
       <div className="absolute inset-0 overflow-hidden opacity-30">
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
@@ -71,11 +71,11 @@ const Contact = () => {
               <MessageCircle size={32} className="text-white" />
             </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Entre em <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-600">Contato</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-indigo-600 mx-auto rounded mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Vamos conversar sobre tecnologia, projetos ou oportunidades! Estou sempre aberto a novos desafios e colaborações.
           </p>
         </motion.div>
@@ -126,14 +126,14 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 text-center"
+          className="bg-slate-700 rounded-2xl p-8 shadow-xl border border-slate-600 text-center"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-12 h-12 bg-gradient-to-br from-primary to-indigo-600 rounded-full flex items-center justify-center">
               <Mail size={24} className="text-white" />
             </div>
             <div className="text-left">
-              <p className="text-sm text-gray-600 font-semibold">Email</p>
+              <p className="text-sm text-gray-400 font-semibold">Email</p>
               <a
                 href="mailto:kaiquedemetrio@email.com"
                 className="text-lg font-bold text-primary hover:text-indigo-600 transition-colors"
@@ -142,7 +142,7 @@ const Contact = () => {
               </a>
             </div>
           </div>
-          <p className="text-gray-600 text-sm">
+          <p className="text-gray-300 text-sm">
             Prefere email? Envie sua mensagem diretamente para minha caixa de entrada!
           </p>
         </motion.div>
@@ -155,18 +155,18 @@ const Contact = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-12"
         >
-          <p className="text-gray-600 mb-6">
-            💼 Disponível para projetos freelance e oportunidades profissionais
+          <p className="text-gray-300 mb-6">
+            Disponível para projetos freelance e oportunidades profissionais
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
-              ✓ Freelance
+            <span className="px-4 py-2 bg-green-900/30 text-green-300 rounded-full text-sm font-semibold border border-green-700/50">
+              Freelance
             </span>
-            <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
-              ✓ Tempo Integral
+            <span className="px-4 py-2 bg-blue-900/30 text-blue-300 rounded-full text-sm font-semibold border border-blue-700/50">
+              Tempo Integral
             </span>
-            <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">
-              ✓ Projetos
+            <span className="px-4 py-2 bg-purple-900/30 text-purple-300 rounded-full text-sm font-semibold border border-purple-700/50">
+              Projetos
             </span>
           </div>
         </motion.div>
