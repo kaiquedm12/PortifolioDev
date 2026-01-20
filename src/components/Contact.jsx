@@ -128,23 +128,24 @@ const Contact = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="bg-slate-700 rounded-2xl p-8 shadow-xl border border-slate-600 text-center"
         >
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-primary to-indigo-600 rounded-full flex items-center justify-center">
-              <Mail size={24} className="text-white" />
+          <div className="mb-6">
+            <div className="w-16 h-16 bg-gradient-to-br from-primary to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <Mail size={32} className="text-white" />
             </div>
-            <div className="text-left">
-              <p className="text-sm text-gray-400 font-semibold">Email</p>
-              <a
-                href="mailto:kaiquedemetrio@email.com"
-                className="text-lg font-bold text-primary hover:text-indigo-600 transition-colors"
-              >
-                kaiquedemetrio@email.com
-              </a>
-            </div>
+            <h3 className="text-2xl font-bold text-white mb-2">Entre em Contato</h3>
+            <p className="text-gray-300 text-sm mb-6">
+              Envie-me um email diretamente!
+            </p>
           </div>
-          <p className="text-gray-300 text-sm">
-            Prefere email? Envie sua mensagem diretamente para minha caixa de entrada!
-          </p>
+          <motion.a
+            href="mailto:kaiquedemetrio2017123@gmail.com"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-primary to-indigo-600 text-white font-bold rounded-xl hover:shadow-lg transition-all duration-300"
+          >
+            <Mail size={20} />
+            Enviar Email
+          </motion.a>
         </motion.div>
 
         {/* Call to action */}

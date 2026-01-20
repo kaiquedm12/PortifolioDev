@@ -11,13 +11,14 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Kaique Demetrio - Desenvolvedor Full Stack</title>
+        <title>Kaique Demetrio - Desenvolvedor Back-end</title>
         <meta
           name="description"
-          content="Portfólio de Kaique Demetrio - Desenvolvedor Full Stack especializado em C#, JavaScript, Python, React, Node.js e muito mais."
+          content="Portfólio de Kaique Demetrio - Desenvolvedor Back-end especializado em C#, JavaScript, Python, React, Node.js e muito mais."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" />
       </Head>
       <main className="min-h-screen">
         <Navbar />
