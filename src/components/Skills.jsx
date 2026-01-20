@@ -1,96 +1,78 @@
 import { motion } from 'framer-motion'
-import {
-  Code2,
-  Database,
-  Server,
-  Box,
-  FileCode,
-  GitBranch,
-  Cpu,
-  LayoutTemplate,
-  Wind,
-} from 'lucide-react'
 
 const Skills = () => {
-  const skills = [
-    { name: 'JavaScript', icon: Code2, color: 'bg-yellow-900/30 text-yellow-300', borderColor: 'border-yellow-700/50' },
-    { name: 'TypeScript', icon: Code2, color: 'bg-blue-900/30 text-blue-300', borderColor: 'border-blue-700/50' },
-    { name: 'React', icon: LayoutTemplate, color: 'bg-cyan-900/30 text-cyan-300', borderColor: 'border-cyan-700/50' },
-    { name: 'Node.js', icon: Server, color: 'bg-green-900/30 text-green-300', borderColor: 'border-green-700/50' },
-    { name: 'C#', icon: Cpu, color: 'bg-purple-900/30 text-purple-300', borderColor: 'border-purple-700/50' },
-    { name: 'Python', icon: Code2, color: 'bg-blue-900/30 text-blue-300', borderColor: 'border-blue-700/50' },
-    { name: 'Java', icon: Cpu, color: 'bg-orange-900/30 text-orange-300', borderColor: 'border-orange-700/50' },
-    { name: 'Spring Boot', icon: Box, color: 'bg-green-900/30 text-green-300', borderColor: 'border-green-700/50' },
-    { name: 'PostgreSQL', icon: Database, color: 'bg-blue-900/30 text-blue-300', borderColor: 'border-blue-700/50' },
-    { name: 'MySQL', icon: Database, color: 'bg-orange-900/30 text-orange-300', borderColor: 'border-orange-700/50' },
-    { name: 'SQLite', icon: Database, color: 'bg-slate-700/50 text-gray-300', borderColor: 'border-slate-600/50' },
-    { name: 'Docker', icon: Box, color: 'bg-cyan-900/30 text-cyan-300', borderColor: 'border-cyan-700/50' },
-    { name: 'Git', icon: GitBranch, color: 'bg-red-900/30 text-red-300', borderColor: 'border-red-700/50' },
+  const technologies = [
+    'React',
+    'React Native',
+    'Expo',
+    'Next.js',
+    'TypeScript',
+    'Tailwind CSS',
+    'JavaScript',
+    'Node.js',
+    'C#',
+    'Python',
+    'Java',
+    'Spring Boot',
+    'PostgreSQL',
+    'MySQL',
+    'SQLite',
+    'Docker',
+    'Git',
   ]
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.4,
-      },
-    },
-  }
+  const softSkills = [
+    'Comunicação',
+    'Trabalho em equipe',
+    'Resolução de problemas',
+    'Adaptabilidade',
+    'Proatividade',
+    'Pensamento crítico',
+    'Organização',
+  ]
 
   return (
-    <section id="habilidades" className="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-gradient-to-b from-white to-slate-50">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Minhas <span className="text-primary">Habilidades</span>
-          </h2>
-          <div className="w-24 h-1 bg-primary mx-auto rounded"></div>
-        </motion.div>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
-        >
-          {skills.map((skill, index) => {
-            const IconComponent = skill.icon
-            return (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ scale: 1.1, y: -5 }}
-                className="bg-slate-700 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center justify-center text-center border border-slate-600"
-              >
-                <div
-                  className={`w-16 h-16 rounded-full ${skill.color} border ${skill.borderColor} flex items-center justify-center mb-4`}
+          {/* Tecnologias */}
+          <div className="mb-12">
+            <div className="flex flex-wrap gap-3 mb-8">
+              {technologies.map((tech, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="px-5 py-2.5 bg-blue-50 text-blue-700 rounded-xl font-semibold text-sm border border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-300 shadow-sm hover:shadow-md cursor-default"
                 >
-                  <IconComponent size={32} />
-                </div>
-                <h3 className="text-lg font-semibold text-white">
-                  {skill.name}
-                </h3>
-              </motion.div>
-            )
-          })}
+                  {tech}
+                </motion.span>
+              ))}
+            </div>
+          </div>
+
+          {/* Soft Skills */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="bg-slate-50 rounded-2xl p-6 border border-slate-200"
+          >
+            <p className="text-slate-700 text-base leading-relaxed">
+              <span className="font-bold text-slate-900">Soft Skills:</span>{' '}
+              {softSkills.join(', ')}
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </section>

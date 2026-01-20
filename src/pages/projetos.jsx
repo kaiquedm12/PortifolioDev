@@ -1,16 +1,16 @@
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
+import Projects from '../components/Projects'
 import Footer from '../components/Footer'
 
-export default function Home() {
+export default function Projetos() {
   return (
     <>
       <Head>
-        <title>Kaique Demetrio - Desenvolvedor Full Stack</title>
+        <title>Projetos - Kaique Demetrio</title>
         <meta
           name="description"
-          content="Portfólio de Kaique Demetrio - Desenvolvedor Full Stack especializado em C#, JavaScript, Python, React, Node.js e muito mais."
+          content="Veja os projetos desenvolvidos por Kaique Demetrio."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -18,10 +18,9 @@ export default function Home() {
       </Head>
       <main className="min-h-screen">
         <Navbar />
-        <Hero />
+        <Projects />
         <Footer />
       </main>
     </>
   )
 }
-

@@ -51,7 +51,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="contato" className="py-20 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-slate-50 to-white min-h-screen relative overflow-hidden">
       {/* Background decorativo */}
       <div className="absolute inset-0 overflow-hidden opacity-30">
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
@@ -71,11 +71,11 @@ const Contact = () => {
               <MessageCircle size={32} className="text-white" />
             </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Entre em <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-600">Contato</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            Entre em <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Contato</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-indigo-600 mx-auto rounded mb-6"></div>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded mb-6"></div>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
             Vamos conversar sobre tecnologia, projetos ou oportunidades! Estou sempre aberto a novos desafios e colaborações.
           </p>
         </motion.div>
@@ -86,7 +86,7 @@ const Contact = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-6 mb-12"
+          className="grid md:grid-cols-3 gap-8 mb-12"
         >
           {socialLinks.map((social, index) => {
             const IconComponent = social.icon
@@ -94,7 +94,7 @@ const Contact = () => {
               <motion.a
                 key={index}
                 variants={itemVariants}
-                whileHover={{ y: -10, scale: 1.05 }}
+                whileHover={{ y: -12, scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href={social.url}
                 target="_blank"
@@ -126,14 +126,14 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-slate-700 rounded-2xl p-8 shadow-xl border border-slate-600 text-center"
+          className="bg-white rounded-2xl p-8 shadow-xl shadow-slate-200/50 border border-slate-200 text-center"
         >
           <div className="mb-6">
-            <div className="w-16 h-16 bg-gradient-to-br from-primary to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
               <Mail size={32} className="text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Entre em Contato</h3>
-            <p className="text-gray-300 text-sm mb-6">
+            <h3 className="text-2xl font-bold text-slate-900 mb-2">Entre em Contato</h3>
+            <p className="text-slate-600 text-sm mb-6">
               Envie-me um email diretamente!
             </p>
           </div>
@@ -141,7 +141,7 @@ const Contact = () => {
             href="mailto:kaiquedemetrio2017123@gmail.com"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-primary to-indigo-600 text-white font-bold rounded-xl hover:shadow-lg transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300"
           >
             <Mail size={20} />
             Enviar Email
@@ -156,18 +156,18 @@ const Contact = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-12"
         >
-          <p className="text-gray-300 mb-6">
+          <p className="text-slate-700 mb-8 font-medium text-lg">
             Disponível para projetos freelance e oportunidades profissionais
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <span className="px-4 py-2 bg-green-900/30 text-green-300 rounded-full text-sm font-semibold border border-green-700/50">
-              Freelance
+          <div className="flex flex-wrap justify-center gap-4">
+            <span className="px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl text-base font-bold shadow-lg shadow-green-500/30 border-2 border-green-400">
+              ✓ Freelance
             </span>
-            <span className="px-4 py-2 bg-blue-900/30 text-blue-300 rounded-full text-sm font-semibold border border-blue-700/50">
-              Tempo Integral
+            <span className="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-xl text-base font-bold shadow-lg shadow-blue-500/30 border-2 border-blue-400">
+              ✓ Tempo Integral
             </span>
-            <span className="px-4 py-2 bg-purple-900/30 text-purple-300 rounded-full text-sm font-semibold border border-purple-700/50">
-              Projetos
+            <span className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-xl text-base font-bold shadow-lg shadow-purple-500/30 border-2 border-purple-400">
+              ✓ Projetos
             </span>
           </div>
         </motion.div>
