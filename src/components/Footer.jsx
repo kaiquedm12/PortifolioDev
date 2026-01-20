@@ -38,7 +38,7 @@ const Footer = () => {
               Kaique Demetrio
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Desenvolvedor Back-end.
+              Desenvolvedor Full Stack.
             </p>
           </motion.div>
 

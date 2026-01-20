@@ -28,7 +28,7 @@ const About = () => {
         >
           <p className="text-lg text-gray-200 leading-relaxed mb-6">
             Sou <strong className="text-primary">Kaique Demetrio</strong>, um
-            desenvolvedor Back-end apaixonado por criar soluções tecnológicas
+            desenvolvedor Full Stack apaixonado por criar soluções tecnológicas
             inovadoras e eficientes. Atualmente, estou cursando{' '}
             <strong>Engenharia de Computação na Unisatc</strong>
           </p>
