@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Instagram, Mail, Heart } from 'lucide-react'
+import { Github, Linkedin, Instagram, Mail } from 'lucide-react'
+import { useTheme } from '../context/ThemeContext'
+import { t } from '../context/translations'
 
 const Footer = () => {
+  const { isDarkMode, language, mounted } = useTheme()
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
@@ -23,7 +26,11 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-12">
+    <footer className={`transition-all duration-300 py-12 ${
+      isDarkMode
+        ? 'bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100'
+        : 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Logo e Descrição */}
@@ -38,7 +45,7 @@ const Footer = () => {
               Kaique Demetrio
             </h3>
             <p className="text-slate-300 text-sm leading-relaxed">
-              Desenvolvedor Full Stack.
+              {t('descricao', language)}
             </p>
           </motion.div>
 
@@ -50,22 +57,27 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="space-y-4"
           >
-            <h3 className="text-lg font-semibold text-white mb-4">
-              Links Rápidos
+            <h3 className={`text-lg font-semibold mb-4 ${isDarkMode ? 'text-slate-100' : 'text-white'}`}>
+              {language === 'pt' ? 'Links Rápidos' : 'Quick Links'}
             </h3>
             <ul className="space-y-2">
-              {['Início', 'Sobre', 'Projetos', 'Habilidades', 'Contato'].map(
-                (item) => (
-                  <li key={item}>
-                    <a
-                      href={`#${item.toLowerCase()}`}
-                      className="text-slate-300 hover:text-indigo-400 transition-colors duration-300 text-sm"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+              {[
+                { pt: 'Início', en: 'Home' },
+                { pt: 'Sobre', en: 'About' },
+                { pt: 'Projetos', en: 'Projects' },
+                { pt: 'Contato', en: 'Contact' },
+              ].map((item) => (
+                <li key={item.pt}>
+                  <a
+                    href={`#${item.pt.toLowerCase()}`}
+                    className={`transition-colors duration-300 text-sm hover:text-indigo-400 ${
+                      isDarkMode ? 'text-slate-400' : 'text-slate-300'
+                    }`}
+                  >
+                    {language === 'pt' ? item.pt : item.en}
+                  </a>
+                </li>
+              ))}
             </ul>
           </motion.div>
 
@@ -77,8 +89,8 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-4"
           >
-            <h3 className="text-lg font-semibold text-white mb-4">
-              Redes Sociais
+            <h3 className={`text-lg font-semibold mb-4 ${isDarkMode ? 'text-slate-100' : 'text-white'}`}>
+              {language === 'pt' ? 'Redes Sociais' : 'Social Media'}
             </h3>
             <div className="flex gap-4">
               {socialLinks.map((social) => {
@@ -89,7 +101,11 @@ const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-slate-700/50 rounded-full flex items-center justify-center hover:bg-indigo-600 hover:scale-110 transition-all duration-300 text-slate-300 hover:text-white"
+                    className={`w-10 h-10 rounded-full flex items-center justify-center hover:bg-indigo-600 hover:scale-110 transition-all duration-300 hover:text-white ${
+                      isDarkMode
+                        ? 'bg-slate-800/50 text-slate-400'
+                        : 'bg-slate-700/50 text-slate-300'
+                    }`}
                     aria-label={social.name}
                   >
                     <IconComponent size={20} />
@@ -97,7 +113,7 @@ const Footer = () => {
                 )
               })}
             </div>
-            <div className="flex items-center gap-2 text-slate-300 text-sm mt-4">
+            <div className={`flex items-center gap-2 text-sm mt-4 ${isDarkMode ? 'text-slate-400' : 'text-slate-300'}`}>
               <Mail size={16} />
               <span>kaiquedemetrio2017123@gmail.com</span>
             </div>
@@ -105,25 +121,16 @@ const Footer = () => {
         </div>
 
         {/* Linha divisória */}
-        <div className="border-t border-slate-700 pt-8">
+        <div className={`border-t pt-8 ${isDarkMode ? 'border-slate-800' : 'border-slate-700'}`}>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-slate-400 text-sm text-center md:text-left"
+              className={`text-sm text-center md:text-left ${isDarkMode ? 'text-slate-500' : 'text-slate-400'}`}
             >
-              © {currentYear} Kaique Demetrio. Todos os direitos reservados.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-slate-400 text-sm flex items-center gap-1"
-            >
-            
+              © {currentYear} Kaique Demetrio. {language === 'pt' ? 'Todos os direitos reservados.' : 'All rights reserved.'}
             </motion.p>
           </div>
         </div>
