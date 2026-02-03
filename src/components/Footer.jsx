@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Instagram, Mail } from 'lucide-react'
+import Link from 'next/link'
 import { useTheme } from '../context/ThemeContext'
 import { t } from '../context/translations'
 
@@ -62,20 +63,20 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2">
               {[
-                { pt: 'Início', en: 'Home' },
-                { pt: 'Sobre', en: 'About' },
-                { pt: 'Projetos', en: 'Projects' },
-                { pt: 'Contato', en: 'Contact' },
+                { pt: 'Início', en: 'Home', href: '/' },
+                { pt: 'Sobre', en: 'About', href: '/sobre' },
+                { pt: 'Projetos', en: 'Projects', href: '/projetos' },
+                { pt: 'Contato', en: 'Contact', href: '/contato' },
               ].map((item) => (
                 <li key={item.pt}>
-                  <a
-                    href={`#${item.pt.toLowerCase()}`}
+                  <Link
+                    href={item.href}
                     className={`transition-colors duration-300 text-sm hover:text-indigo-400 ${
                       isDarkMode ? 'text-slate-400' : 'text-slate-300'
                     }`}
                   >
                     {language === 'pt' ? item.pt : item.en}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
